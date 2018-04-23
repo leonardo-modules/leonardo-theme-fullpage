@@ -1,0 +1,40 @@
+
+// Styles
+// --------------------------------------------------
+
+// Vendor Components
+@import "/bootstrap/scss/bootstrap";
+
+#menu {
+    position: fixed;
+    top: 0;
+    height: 55px;
+    z-index: 70;
+    left: 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    background-color: #565861;
+}
+#menu li {
+    display: inline-block;
+    margin: 0;
+    color: #000;
+    background: none;
+}
+#menu li a {
+    padding: 18px 25px;
+    display: block;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+}
+#menu li a.active:after, #menu li a:hover:after {
+    content: '';
+    height: 2px;
+    width: 100%;
+    background-color: #e8aa33;
+    display: block;
+    margin-top: 3px;
+}
+

@@ -1,0 +1,5 @@
+include MANIFEST.in
+include README.rst
+recursive-include leonardo_theme_fullpage/static *
+recursive-include leonardo_theme_fullpage/locale *
+recursive-include leonardo_theme_fullpage/templates *

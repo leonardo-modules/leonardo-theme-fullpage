@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load leonardo_tags feincms_page_tags applicationcontent_tags branding i18n %}
+{% load analytical %}
+
+<html>
+  <head>
+    {% analytical_head_top %}
+    {% include "_header.html" %}
+    {% analytical_head_bottom %}
+  </head>
+  <body id="{% block body_id %}main_content{% endblock %}" ng-app='horizon.app' ng-strict-di class="">
+    <noscript>
+      <div class="javascript_disabled_alert">
+        {% trans "This application requires JavaScript to be enabled in your web browser." %}
+      </div>
+    </noscript>
+    {% analytical_body_top %}
+    {% include "horizon/_messages.html" %}
+    {% feincms_render_region feincms_page "header" request %}
+    <div class="main-content" id="module2" full-page>
+      {% feincms_render_region feincms_page "col3" request %}
+    </div>
+    <script type="text/javascript" src="{% static 'js/mm.Angular-FullPage.min.js' %}"></script>
+    <script type="text/javascript">
+      (function() {
+        'use strict';
+        angular
+          .module('app', ['fullpage.js'])
+          .config(function(fullPageConfigProvider) {
+            fullPageConfigProvider.setConfig({
+              sectionsColor : ['#f7f7f7',],
+              verticalCentered: true,
+              menu: '#menu',
+              slidesNavigation: true,
+              slidesNavPosition: 'bottom',
+              scrollBar: false,
+              slideSelector: '.fullpage-slide', // important for working bootstrap slider correctly
+            });
+          })          
+      })();
+      angular.bootstrap(document.getElementById("module2"), ['app']);
+    </script>
+    {% include "horizon/_scripts.html" %}
+    {% feincms_render_region feincms_page "helper" request %}
+    <div id="modal_wrapper"></div>
+    {% analytical_body_bottom %}
+  </body>
+</html>
+

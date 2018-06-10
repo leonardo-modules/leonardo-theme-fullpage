@@ -4,6 +4,7 @@
 
 {% block content %}
 {% feincms_nav root level=level depth=1 as toplevel %}
+<div class="navbar-collapse collapse">
   <ul id="menu">
   {% if depth == 1 %}
   {% for page in toplevel %}
@@ -33,4 +34,5 @@
   {% endfor %}
   {% endif %}
   </ul>
+</div>
 {% endblock %}

@@ -5,11 +5,15 @@ LEONARDO_APPS = [
 ]
 
 LEONARDO_JS_FILES = [
-	'js/mm.Angular-FullPage.min.js',
+    'js/mm.Angular-FullPage.min.js',
 ]
 
 LEONARDO_CSS_FILES = [
-	'css/mm.angular-fullpage.css',
+    'css/mm.angular-fullpage.css',
 ]
 
 LEONARDO_SCSS_FILES = []
+
+LEONARDO_CONFIG = {
+    'SECTIONS_COLORS': ('#ff #f26f21', 'Color of sections'),
+}

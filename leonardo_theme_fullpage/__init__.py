@@ -18,3 +18,7 @@ if 'leonardo_theme_fullpage' in APPS:
     ]
 
     LEONARDO_SCSS_FILES = []
+
+    LEONARDO_CONFIG = {
+        'SECTIONS_COLORS': ('#ff #f26f21', 'Color of sections'),
+    }

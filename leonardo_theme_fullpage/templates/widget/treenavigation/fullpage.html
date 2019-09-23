@@ -4,11 +4,12 @@
 
 {% block content %}
 {% feincms_nav root level=level depth=1 as toplevel %}
+<div class="navbar-collapse collapse">
   <ul id="menu">
   {% if depth == 1 %}
   {% for page in toplevel %}
     <li class="{% if page|is_equal_or_parent_of:current %}active{% endif %}">
-      <a data-menuanchor="{{ page.slug }}" ng-href='/#{{ page.slug }}'>{{ page.title }}</a>
+      <a data-menuanchor="{{ page.slug }}" ng-href='#/{{ page.slug }}'>{{ page.title }}</a>
     </li>
   {% endfor %}
   {% else %}
@@ -33,4 +34,5 @@
   {% endfor %}
   {% endif %}
   </ul>
+</div>
 {% endblock %}
